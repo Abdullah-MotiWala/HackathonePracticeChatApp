@@ -1,16 +1,20 @@
 //Firebase Integeration
-var firebaseConfig = {
-    apiKey: "AIzaSyAh1AJq7NJHXbX1xq5Uf4g5p0HhkFVN31o",
-    authDomain: "firstproject-7a126.firebaseapp.com",
-    databaseURL: "https://firstproject-7a126-default-rtdb.firebaseio.com",
-    projectId: "firstproject-7a126",
-    storageBucket: "firstproject-7a126.appspot.com",
-    messagingSenderId: "827727726100",
-    appId: "1:827727726100:web:2c4e7762d63d75814d4901",
-    measurementId: "G-3X18KJDFFE"
-};
+const firebaseConfig = {
+    apiKey: "AIzaSyD5eyZ05Zi3x7P_pKrfW9L4Ghg0F0suSqQ",
+    authDomain: "practice-chatapp-b93f1.firebaseapp.com",
+    projectId: "practice-chatapp-b93f1",
+    storageBucket: "practice-chatapp-b93f1.appspot.com",
+    messagingSenderId: "273905711893",
+    appId: "1:273905711893:web:143eff760ebb4c6de6071c",
+    measurementId: "G-42QVG5WD55"
+  };
 firebase.initializeApp(firebaseConfig);
+function googleLogin(){
+let provider = new firebase.auth.GoogleAuthProvider();
+console.log("loginGoogle");
+firebase.auth().signInWithPopup(provider).then(alert("Login Successfully")).catch(res=>alert(res))
+}
 
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-})
+function logOut(){
+
+}
