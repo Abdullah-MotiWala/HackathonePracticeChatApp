@@ -9,12 +9,17 @@ const firebaseConfig = {
     measurementId: "G-42QVG5WD55"
   };
 firebase.initializeApp(firebaseConfig);
+
 function googleLogin(){
 let provider = new firebase.auth.GoogleAuthProvider();
-console.log("loginGoogle");
 firebase.auth().signInWithPopup(provider).then(alert("Login Successfully")).catch(res=>alert(res))
-}
+};
 
+const facebookLogin = () =>{
+  let facebookProvider = new firebase.auth.FacebookAuthProvider();
+  firebase.auth().signInWithPopup(facebookProvider).then(alert("Login Successfull")).catch(res => alert(res))
+
+}
 function logOut(){
 
 }
