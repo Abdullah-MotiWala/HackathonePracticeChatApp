@@ -34,9 +34,22 @@
                 SignOut</div>
         </li>
     </ul>
-    
-
-
+    <!-- Hotel Container -->
+    <div class="container">
+        <div class="input-group mb-3 d-flex">
+            <input type="text" class="form-control" placeholder="Hotel Name" id="hotelName">
+            <input type="text" class="form-control" placeholder="Your Area" id="hotelArea">
+        </div>
+        <div class="input-group mb-2  hotel-item">
+            <div class="input-group">
+                <input type="text" class="form-control itemName" placeholder="Item">
+                <input class="input-group-text itemRate" placeholder="Rate"></input>
+                <button class="btn btn-outline-secondary" type="button" id="addItem" onclick="addItem()">Add Item</button>
+            </div>
+        </div>
+        <div class="wrapper itemAdded"></div>
+        <div class="btn btn-outline-primary btn-block fixed-bottom mb-5" onclick="addingDB()"><i class="fa fa-plus"></i> Add hotel</div>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
@@ -60,7 +73,7 @@
     <script src="mainPage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
+        </script>
 </body>
 
 </html>

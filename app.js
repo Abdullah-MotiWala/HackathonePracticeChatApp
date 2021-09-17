@@ -19,17 +19,31 @@ const manualSignUp = () => {
     .catch(err => alert(err));
 }
 
+
+const manualSignIn = () => {
+  let email = document.getElementById("userName").value;
+  let password = document.getElementById("password").value;
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      document.getElementById("userName").value = "";
+      document.getElementById("password").value = "";
+    })
+    .catch(err => alert(err));
+}
+
+
 auth.onAuthStateChanged((user) => {
   if (user) {
     firestore.collection("users").doc(user.uid).set({
-      email:user.email
+      email: user.email
     })
-    location.replace("mainPage.html");
-    console.log(user.email)
+
+    if (document.querySelector(".businessCheck").checked) {
+      location.replace("mainPage.html");
+      console.log(user.email)
+    }
+    else {
+      location.replace("customer.html")
+    }
   }
 })
-
-
-function logOut() {
-
-}
