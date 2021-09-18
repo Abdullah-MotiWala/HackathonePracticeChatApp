@@ -5,6 +5,7 @@ auth.onAuthStateChanged((user) => {
     }
     else {
         document.getElementById("userEmail").innerHTML = user.email;
+        userName = user.email;
     }
 })
 //
@@ -46,7 +47,7 @@ const addingDB = (user) => {
     const hotelName = document.querySelector("#hotelName").value;
     const hotelArea = document.querySelector("#hotelArea").value;
     gettingItem();
-    firestore.collection("hotelUsers").add({
+    firestore.collection("hotelUsers").doc(userName).set({
         hotelName, hotelArea, arrOfItems
     }).then(() => alert("Succeed"))
     document.querySelector(".itemAdded").innerHTML = "";
